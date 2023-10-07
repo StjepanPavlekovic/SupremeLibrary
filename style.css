@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(33, 32, 44);
+    display: grid;
+    grid-template-rows: 120px auto;
+    overflow-x: hidden;
+    position: relative;
+    gap: 25px;
+}
+
+.navbar {
+    height: 120px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.container {
+    width: clamp(400px, 70%, 1200px);
+    margin: auto;
+    background: rgb(34, 32, 44);
+    height: 100%;
+    padding: 25px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.sidebar {
+    height: 100%;
+    width: min(100vw, 500px);
+    position: fixed;
+    left: 100%;
+    transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.134);
+    backdrop-filter: blur(15px);
+    transform: translateX(-100%);
+
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.error {
+    color: red;
+    display: inline;
+}
+
+ .hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0);
+}
+
+.visible {
+    transform: translateX(-100%);
+    opacity: 1;
+    pointer-events: auto;
+} 
+
+.non-interactable {
+    pointer-events: none;
+}
+
+.display-none {
+    display: none;
+}
+
+.sidebar-content {
+    width: 100%;
+    color: white;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.sidebar-content-entry {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+input, textarea {
+    border-radius: 5px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    font-size: .9em;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+input {
+    height: 30px;
+}
+
+.btnSave, .btnCancel {
+    height: 35px;
+    width: 130px;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnSave {
+    background: rgb(131, 139, 252);
+    margin-right: 10px;
+}
+
+.btnCancel {
+    background: rgb(228, 79, 20);
+}
+
+.btnSave:hover, .btnCancel:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.btnSave:active, .btnCancel:active {
+    opacity: .55;
+}
+
+.book {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(130, 72, 185, 0.35);
+    border-radius: 5px;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: rgb(231, 231, 231);
+    height: 350px;
+    width: 300px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.book h2 {
+    max-width: 200px;
+}
+
+.splitter {
+    width: 100%;
+    height: 1px;
+    background: rgba(130, 72, 185, 0.25);
+}
+
+.book:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+    box-shadow: rgba(130, 72, 185, 0.5) 0px 8px 24px;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+
+    width: 50px;
+    height: 20px;
+    right: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.edit, .delete {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls img {
+    height: 80%;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.controls img:hover {
+    height: 100%;
+}
+
+.edit {
+    background: rgb(131, 139, 252);
+}
+
+.delete {
+    background: rgb(228, 79, 20);
+}
+
+.edit:hover, .delete:hover {
+    opacity: 0.7;
+}
+
+.btnNew {
+    width: 180px;
+    height: 35px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(130, 72, 185, 0.35);
+    border-radius: 5px;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: rgb(231, 231, 231);
+}
+
+.btnNew:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(130, 72, 185, 0.5) 0px 3px 14px;
+}
+
+.btnNew:active {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: rgba(130, 72, 185, 0.5) 0px 3px 14px;
+}

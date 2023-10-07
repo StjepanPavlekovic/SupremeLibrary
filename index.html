@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <nav class="navbar">
+            <h1>Supreme Library</h1>
+        </nav>
+        <div class="sidebar hidden">
+            <div class="sidebar-content">
+                <div class="sidebar-content-entry">
+                    <h2>Book information:</h2>
+                </div>
+                
+                <div class="sidebar-content-entry">
+                    <h3>Title:  <label id="errTitle" class="error display-none">*</label></h3>
+                    <input maxlength="40" type="text" id="txtTitle">
+                </div>
+                
+                <div class="sidebar-content-entry">
+                    <h3>Author:  <label id="errAuthor" class="error display-none">*</label></h3>
+                    <input maxlength="40" type="text" id="txtAuthor">
+                </div>
+
+                <div class="sidebar-content-entry">
+                    <h3>Number of pages:  <label id="errPages" class="error display-none">*</label></h3>
+                    <input oninput="this.value = this.value.replace(/[^0-9]/g, '');" type="number" min="1" max="5000" id="txtPages">
+
+                </div>
+                <div class="sidebar-content-entry">
+                    <h3>Synopsis:  <label id="errSynopsis" class="error display-none">*</label></h3>
+                    <textarea rows="5" maxlength="500" id="txtSynopsis"></textarea>
+                </div>
+
+                <div class="sidebar-content-entry" style="flex-direction: row; align-items: center;">
+                    <h3>Read?</h3>
+                    <input type="checkbox" id="read">
+                </div>
+
+                <div class="sidebar-content-entry" style="flex-direction: row; margin-top: 20px;">
+                    <button class="btnSave">Save book</button>
+                    <button class="btnCancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <button class="btnNew">Add new book</button>
+        <div class="container">
+            <!-- <div class="book">
+                <div class="controls">
+                    <div class="edit">
+                        <img src="">
+                    </div>
+                    <div class="delete">
+                        <img src="">
+                    </div>
+                </div>
+
+                <h2>Title</h2>
+                <h3>Author Name</h3>
+                <h4>Pages: 69</h4>
+                <div class="splitter"></div>
+                <b>Synopsis:</b>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat libero facilis architecto consectetur, et maxime fugiat pariatur, quibusdam sit animi.</p>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="src/dompurify.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
